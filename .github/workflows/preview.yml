@@ -1,0 +1,12 @@
+name: Preview
+
+on: push
+
+jobs:
+  changes:
+    name: "Check for docs changes"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello!!!"
+      - run: readarray -t currentProducts < ../developers.cloudflare.com/current-products-list.js
+      - run: echo "${currentProducts[@]}"
